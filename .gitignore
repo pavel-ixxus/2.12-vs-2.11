@@ -1,2 +1,28 @@
-*.class
+project/project
+project/target
+target
+.history
+.idea
+*.iml
+.idea_modules
+.classpath
+.project
+.settings
+
+# temp files
+.~*
+*~
+*.orig
+*.marks
+
+# eclipse
+.scala_dependencies
+.buildpath
+.cache
+.target
+target/
+
+.DS_Store
+*_git
+sbt.dbg.port
 *.log
