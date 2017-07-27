@@ -20,7 +20,7 @@ object BuildSettings {
     , "-target:jvm-1.8"
     , "-Xlog-reflective-calls"
     //, "-Xlint"
-    , if(V.scala.startsWith("2.11")) "" else "-Ywarn-unused:-imports"
+    , if(V.scala.startsWith("2.11") || V.scala == "2.12.1") "" else "-Ywarn-unused:-imports"
     , "-Yno-adapted-args"
     , "-Ywarn-value-discard"
     //"-Xfatal-warnings" // be good!

@@ -27,20 +27,16 @@ object RoaBuild extends Build {
     .settings(excludeDependencies ++= Seq(
       "commons-logging" % "commons-logging",
       "org.slf4j" % "slf4j-log4j12"))
+    .settings(name := roaName)
     .settings(
-      name := roaName,
       libraryDependencies ++=
         compile(
-          logback ++
-            scalaLogging ++
-            slf4j ++
-            jodaConvert ++
-            jodaTime ++
-            solrj ++ solr ++ zookeeper))
-  /* https://github.com/scala/bug/issues/10171
-     https://github.com/wix/accord/issues/103
-    Seq("org.scala-lang" % "scala-compiler" % V.scala % "compile") ++
-  */
+          logback ++ scalaLogging ++ slf4j ++
+          solrj ++ solr ++ zookeeper)
+        //https://github.com/scala/bug/issues/10171
+        //https://github.com/wix/accord/issues/103
+        //Seq("org.scala-lang" % "scala-compiler" % V.scala % "provided")
+        )
 }
 
 object V {
@@ -48,8 +44,6 @@ object V {
   //val scala =  "2.12.2"
   val scala = "2.11.11"
 
-  val jodaConvert = "1.8.2"
-  val jodaTime = "2.9.9"
   val logback = "1.2.3"
   val roa = "1.0.0"
   val scalaLogging = "3.7.1"
@@ -59,8 +53,6 @@ object V {
 }
 
 object Deps {
-  val jodaConvert = "org.joda" % "joda-convert" % V.jodaConvert
-  val jodaTime = "joda-time" % "joda-time" % V.jodaTime
   val slf4j = "org.slf4j" % "slf4j-api" % V.slf4j
   val scalaLogging = "com.typesafe.scala-logging" %% "scala-logging" % V.scalaLogging
 

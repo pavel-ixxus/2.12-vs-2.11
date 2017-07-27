@@ -1,7 +1,6 @@
 package ixxus.solr
 
 import java.nio.file.Path
-
 import com.typesafe.scalalogging.StrictLogging
 
 case class MicroSolrCloud(configPath: Path,
