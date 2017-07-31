@@ -1,5 +1,7 @@
 # Scala compiler 2.12.2 fails where 2.11.11 succeeds
 
+**NOTE**: fixed in Scala 2.12.3
+
 The issue has been discovered while working with the Solr test framework. The project has been reduced to 6 java and 1 scala file.
 
 After you clone the repository, the project will compile, because the compiler version is set to 2.11.11.
